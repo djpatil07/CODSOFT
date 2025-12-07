@@ -48,8 +48,15 @@ header .container {
     font-size: 18px;
     color: #000000;
   }
-
-nav {
+.logo-photo{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  
+  }
+ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -115,6 +122,11 @@ nav .tab:hover {
     font-weight: 500;
   }
 
+.hero-image img {
+    width: 350px;
+    height: auto;
+  }
+
 #about {
     background: #ffffff;
     display: flex;
@@ -122,11 +134,17 @@ nav .tab:hover {
     gap: 30px;
   }
   
-@media (max-width: 700px) {
-    #about {
-      flex-direction: column;
-      text-align: center;
-    }
+.about-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: #10b3b9 3px solid;
+    
+  }
+.about-text {
+    display: flex;
+    flex-direction: column;
   }
 
 #skills {
@@ -165,7 +183,6 @@ nav .tab:hover {
     background: linear-gradient(135deg, #0ea3a8, #6fd4d8);
   }
   
-
 
 #resume {
     padding: 40px;
@@ -212,17 +229,58 @@ nav .tab:hover {
     margin-bottom: 10px;
     color: #333;
   }
-
+.project-photo{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 #contact {
     padding: 40px;
     background: #F3F4F6;
     text-align: center;
   }
-  
-.contact-info p {
-    margin: 5px 0;
-    color: #555;
+#contact a {
+    text-decoration: none;
   }
+    
+  .contact-photo{
+    width: 30px;
+    height: 30px;
+  }
+.resume-photo{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .contact-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-icon::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.contact-icon:hover::after {
+    opacity: 1;
+}
+
 
 footer {
     background: #1F2937;
@@ -232,4 +290,131 @@ footer {
     color: #F3F4F6;
     font-size: 14px;
   }
-  
+
+
+@media (max-width: 700px) {
+
+  header .container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .logo {
+      justify-content: center;
+      font-size: 16px;
+  }
+
+  nav {
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+  }
+
+  nav .tab {
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 10px;
+  }
+
+  #hero {
+      padding: 70px 20px;
+      text-align: center;
+  }
+
+  .hero-container {
+      flex-direction: column;
+      gap: 25px;
+  }
+
+  .hero-text h1 {
+      font-size: 30px;
+  }
+
+  .hero-text p {
+      font-size: 16px;
+  }
+
+  .hero-btn {
+      padding: 10px 20px;
+      font-size: 15px;
+  }
+
+  .hero-image img {
+      width: 240px;
+      height: auto;
+  }
+
+  #about {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+  }
+
+  .about-photo {
+      width: 150px;
+      height: 150px;
+  }
+
+  .about-text p {
+      font-size: 15px;
+      line-height: 1.4;
+  }
+
+  #skills {
+      padding: 50px 15px;
+  }
+
+  .skills-grid {
+      gap: 10px;
+  }
+
+  .skill-badge {
+      font-size: 14px;
+      padding: 8px 14px;
+  }
+
+  .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+  }
+
+  .project-card {
+      padding: 20px;
+  }
+
+  .project-photo {
+      width: 150px;
+      height: 150px;
+  }
+
+  #resume {
+      padding: 40px 15px;
+  }
+
+  .resume-photo {
+      width: 150px;
+      height: 150px;
+  }
+
+  #contact {
+      padding: 40px 15px;
+  }
+
+  .contact-photo {
+      width: 26px;
+      height: 26px;
+  }
+
+  .contact-info {
+      gap: 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  section {
+      padding: 40px 15px;
+  }
+}
+
